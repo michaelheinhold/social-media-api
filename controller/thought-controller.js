@@ -30,8 +30,15 @@ const thoughtController = {
   },
 
   //create thought (push thought id to associated user)
-  createThought({ body }, res) {
+  createThought({ body, params }, res) {
     Thought.create(body)
+      .then(({ _id }) => {
+        return User.findOneAndUpdate(
+          { _id: params.userId },
+          { $push: { thoughts: _id } },
+          { new: true }
+        )
+      })
     .then(dbThoughtData => res.json(dbThoughtData))
     .catch(err => {
       console.log(err);
