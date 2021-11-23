@@ -13,7 +13,7 @@ const thoughtController = {
   },
 
   //find one by id
-  findThoughtById({ params }, res) {
+  getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .select('-__v')
     .then(dbThoughtData => {
@@ -30,11 +30,11 @@ const thoughtController = {
   },
 
   //create thought (push thought id to associated user)
-  createThought({ body, params }, res) {
+  createThought({ body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
-          { _id: params.userId },
+          { _id: body.userId },
           { $push: { thoughts: _id } },
           { new: true }
         )
