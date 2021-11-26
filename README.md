@@ -21,7 +21,7 @@
   This api uses MongoDB to store data.
   
   ### Demonstration Video
-  To see all the available functionality of the api watch this video (https://watch.screencastify.com/v/89OHsnvZYVxyfvlg93Q3)[https://watch.screencastify.com/v/89OHsnvZYVxyfvlg93Q3]
+  To see all the available functionality of the api watch this video [https://watch.screencastify.com/v/89OHsnvZYVxyfvlg93Q3](https://watch.screencastify.com/v/89OHsnvZYVxyfvlg93Q3)
 
   ## License
   
